@@ -1,18 +1,11 @@
 /* tslint:disable: no-shadowed-variable */
 import { assert } from '@amaui/test';
 
-import { startBrowsers, IBrowsers, evaluate, closeBrowsers } from '../utils/js/test/utils';
+import { evaluate } from '../utils/js/test/utils';
 
 import AmauiMeta from '../src';
 
 group('@amaui/meta', () => {
-  let browsers: IBrowsers;
-
-  pre(async () => browsers = await startBrowsers());
-
-  post(async () => {
-    await closeBrowsers(browsers);
-  });
 
   preTo(() => AmauiMeta.reset());
 
@@ -92,7 +85,7 @@ group('@amaui/meta', () => {
         window.AmauiMeta.add('a', 4, object, 'p');
 
         return [window.AmauiMeta.get('a', object), window.AmauiMeta.get('a', object, 'p')];
-      }, { browsers });
+      });
 
       const object = {};
 
@@ -127,7 +120,7 @@ group('@amaui/meta', () => {
         result.push(window.AmauiMeta.get('a', object));
 
         return result;
-      }, { browsers });
+      });
 
       const object = {};
 
@@ -172,7 +165,7 @@ group('@amaui/meta', () => {
         window.AmauiMeta.get('a', object, 'p'),
         window.AmauiMeta.get('ab', object),
       ];
-    }, { browsers });
+    });
 
     const object = {};
 
@@ -207,7 +200,7 @@ group('@amaui/meta', () => {
       window.AmauiMeta.add('aa', 4, object);
 
       return window.AmauiMeta.values(object);
-    }, { browsers });
+    });
 
     const object = {};
 
@@ -231,7 +224,7 @@ group('@amaui/meta', () => {
         window.AmauiMeta.add('a', 4, object);
 
         return window.AmauiMeta.get('a', object);
-      }, { browsers });
+      });
 
       const object = {};
 
@@ -250,7 +243,7 @@ group('@amaui/meta', () => {
         const object = {};
 
         return window.AmauiMeta.get('ab', object);
-      }, { browsers });
+      });
 
       const object = {};
 
@@ -289,7 +282,7 @@ group('@amaui/meta', () => {
         result.push(object !== window.AmauiMeta.get('a', object));
 
         return result;
-      }, { browsers });
+      });
 
       const object = {};
       const value = {};
@@ -330,7 +323,7 @@ group('@amaui/meta', () => {
       window.AmauiMeta.add('a', 4, object);
 
       return [window.AmauiMeta.has('a', object), window.AmauiMeta.has('aa', object)];
-    }, { browsers });
+    });
 
     const object = {};
 
@@ -354,7 +347,7 @@ group('@amaui/meta', () => {
         window.AmauiMeta.add('aa', 4, object);
 
         return window.AmauiMeta.keys(object);
-      }, { browsers });
+      });
 
       const object = {};
 
@@ -377,7 +370,7 @@ group('@amaui/meta', () => {
           window.AmauiMeta.keys(object),
           window.AmauiMeta.keys(object, 'p'),
         ];
-      }, { browsers });
+      });
 
       const object = {};
 
@@ -409,7 +402,7 @@ group('@amaui/meta', () => {
       window.AmauiMeta.remove('a', object);
 
       return [a, window.AmauiMeta.get('a', object, 'p')];
-    }, { browsers });
+    });
 
     const object = {};
 
@@ -440,7 +433,7 @@ group('@amaui/meta', () => {
         window.AmauiMeta.keys(object),
         window.AmauiMeta.keys(object, 'p'),
       ];
-    }, { browsers });
+    });
 
     const object = {};
 
