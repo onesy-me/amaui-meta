@@ -156,4 +156,4 @@ export const utils: IUtils = {};
 
 preAll(async () => utils.browsers = await startBrowsers());
 
-postAll(async () => await closeBrowsers(utils.browsers));
+postAll(async () => await closeBrowsers(utils.browsers as IBrowsers));
