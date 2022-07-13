@@ -1,6 +1,6 @@
 {
   "name": "@amaui/meta",
-  "version": "1.0.11114",
+  "version": "1.0.11117",
   "description": "Meta",
   "repository": "https://github.com/amaui-org/amaui-meta.git",
   "author": "Lazar <lazareric.com@gmail.com>",
@@ -38,7 +38,7 @@
     "test": "yarn lint && yarn type && yarn build && yarn test:pre && yarn cov && yarn test:post"
   },
   "dependencies": {
-    "@amaui/utils": "^1.0.11117",
+    "@amaui/utils": "^1.0.11147",
     "@babel/runtime": "^7.18.3"
   },
   "devDependencies": {
@@ -76,7 +76,7 @@
   },
   "publishConfig": {
     "access": "public",
-    "registry": "https://registry.npmjs.org/"
+    "registry": "https://registry.npmjs.org"
   },
   "sideEffects": false,
   "engines": {

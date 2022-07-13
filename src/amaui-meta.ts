@@ -1,4 +1,5 @@
-import { is, copy } from '@amaui/utils';
+import is from '@amaui/utils/is';
+import copy from '@amaui/utils/copy';
 import { TObject } from '@amaui/models';
 
 const unix = () => Math.floor(new Date().getTime() / 1000);
@@ -30,7 +31,7 @@ class AmauiMeta {
   }
 
   public static set options(value: IOptions) {
-    this.options_ = { ...value, ...this.options };
+    this.options_ = { ...this.options, ...value };
   }
 
   // Class decorator
