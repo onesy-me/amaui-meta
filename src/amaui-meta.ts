@@ -4,13 +4,17 @@ import { TObject } from '@amaui/models';
 
 const unix = () => Math.floor(new Date().getTime() / 1000);
 
+export interface IOptionsValue {
+  copy?: boolean;
+}
+
+export interface IOptionsAdd {
+  override?: boolean;
+}
+
 export interface IOptions {
-  value?: {
-    copy?: boolean;
-  };
-  add?: {
-    override?: boolean;
-  };
+  value?: IOptionsValue;
+  add?: IOptionsAdd;
 }
 
 const optionsDefault: IOptions = {
