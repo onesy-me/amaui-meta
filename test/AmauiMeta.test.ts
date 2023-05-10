@@ -5,7 +5,7 @@ import { evaluate } from '../utils/js/test/utils';
 
 import AmauiMeta from '../src';
 
-group('@amaui/meta', () => {
+group('AmauiMeta', () => {
 
   preTo(() => AmauiMeta.reset());
 
