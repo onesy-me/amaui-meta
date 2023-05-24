@@ -19,10 +19,10 @@ export interface IOptions {
 
 const optionsDefault: IOptions = {
   value: {
-    copy: false,
+    copy: false
   },
   add: {
-    override: true,
+    override: true
   },
 };
 
@@ -189,46 +189,6 @@ class AmauiMeta {
     }
   }
 
-  public static values(object: any, property?: any): Array<any> | undefined {
-    // A WeakMap's key can only be
-    // of a reference value type
-    if (!is('simple', object)) {
-      const mapObject: Map<any, any> = this.meta.get(object);
-
-      if (!mapObject) return;
-
-      if (property !== undefined) {
-        const mapProperty: Map<any, any> = mapObject.get(property);
-
-        // Return object property's values as array
-        return mapProperty && Array.from(mapProperty.values());
-      }
-
-      // Return object's values as array
-      return mapObject && Array.from(mapObject.values()).map(item => item.value);
-    }
-  }
-
-  public static keys(object: any, property?: any): Array<any> | undefined {
-    // A WeakMap's key can only be
-    // of a reference value type
-    if (!is('simple', object)) {
-      const mapObject: Map<any, any> = this.meta.get(object);
-
-      if (!mapObject) return;
-
-      if (property !== undefined) {
-        const mapProperty: Map<any, any> = mapObject.get(property);
-
-        // Return object property's keys as array
-        return mapProperty && Array.from(mapProperty.keys());
-      }
-
-      // Return object's keys as array
-      return mapObject && Array.from(mapObject.keys());
-    }
-  }
-
   public static get(key: any, object: any, property?: any): any | undefined {
     // A WeakMap's key can only be
     // of a reference value type
@@ -297,6 +257,46 @@ class AmauiMeta {
         // Remove map object's key and value
         mapObject.delete(key);
       }
+    }
+  }
+
+  public static values(object: any, property?: any): Array<any> | undefined {
+    // A WeakMap's key can only be
+    // of a reference value type
+    if (!is('simple', object)) {
+      const mapObject: Map<any, any> = this.meta.get(object);
+
+      if (!mapObject) return;
+
+      if (property !== undefined) {
+        const mapProperty: Map<any, any> = mapObject.get(property);
+
+        // Return object property's values as array
+        return mapProperty && Array.from(mapProperty.values());
+      }
+
+      // Return object's values as array
+      return mapObject && Array.from(mapObject.values()).map(item => item.value);
+    }
+  }
+
+  public static keys(object: any, property?: any): Array<any> | undefined {
+    // A WeakMap's key can only be
+    // of a reference value type
+    if (!is('simple', object)) {
+      const mapObject: Map<any, any> = this.meta.get(object);
+
+      if (!mapObject) return;
+
+      if (property !== undefined) {
+        const mapProperty: Map<any, any> = mapObject.get(property);
+
+        // Return object property's keys as array
+        return mapProperty && Array.from(mapProperty.keys());
+      }
+
+      // Return object's keys as array
+      return mapObject && Array.from(mapObject.keys());
     }
   }
 

@@ -191,29 +191,6 @@ group('AmauiMeta', () => {
     ]));
   });
 
-  to('values', async () => {
-    const valueBrowsers = await evaluate((window: any) => {
-      // tslint:disable-next-line
-      const object = {};
-
-      window.AmauiMeta.add('a', 4, object);
-      window.AmauiMeta.add('aa', 4, object);
-
-      return window.AmauiMeta.values(object);
-    });
-
-    const object = {};
-
-    AmauiMeta.add('a', 4, object);
-    AmauiMeta.add('aa', 4, object);
-
-    const valueNode = AmauiMeta.values(object);
-
-    const values = [valueNode, ...valueBrowsers];
-
-    values.forEach(value => assert(value).eql([4, 4]));
-  });
-
   group('get', () => {
 
     to('get', async () => {
@@ -334,6 +311,29 @@ group('AmauiMeta', () => {
     const values = [valueNode, ...valueBrowsers];
 
     values.forEach(value => assert(value).eql([true, false]));
+  });
+
+  to('values', async () => {
+    const valueBrowsers = await evaluate((window: any) => {
+      // tslint:disable-next-line
+      const object = {};
+
+      window.AmauiMeta.add('a', 4, object);
+      window.AmauiMeta.add('aa', 4, object);
+
+      return window.AmauiMeta.values(object);
+    });
+
+    const object = {};
+
+    AmauiMeta.add('a', 4, object);
+    AmauiMeta.add('aa', 4, object);
+
+    const valueNode = AmauiMeta.values(object);
+
+    const values = [valueNode, ...valueBrowsers];
+
+    values.forEach(value => assert(value).eql([4, 4]));
   });
 
   group('keys', () => {
