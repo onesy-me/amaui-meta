@@ -1,1 +1,1 @@
-export { default } from './AmauiMeta';
+export { default } from './OnesyMeta';

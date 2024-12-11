@@ -1,8 +1,8 @@
 {
-  "name": "@amaui/meta",
+  "name": "@onesy/meta",
   "version": "1.0.11143",
   "description": "Meta",
-  "repository": "https://github.com/amaui-org/amaui-meta.git",
+  "repository": "https://github.com/onesy-org/onesy-meta.git",
   "author": "Lazar <lazareric.com@gmail.com>",
   "license": "MIT",
   "private": false,
@@ -23,7 +23,7 @@
     "node",
     "nodejs",
     "library",
-    "amaui",
+    "onesy",
     "utils"
   ],
   "scripts": {
@@ -32,18 +32,18 @@
     "release": "yarn build && yarn version --patch --no-git-tag-version && yarn build && cd ./build && npm publish",
     "lint": "tslint -c tslint.json -p tsconfig.json",
     "type": "tsc --noEmit -p tsconfig.json",
-    "cov": "cross-env NODE_ENV=test amaui-test",
+    "cov": "cross-env NODE_ENV=test onesy-test",
     "test:pre": "pm2 update && pm2 delete all && pm2 start utils/js/test/app.js && wait-on http://localhost:4000",
     "test:post": "pm2 delete all",
     "test": "yarn lint && yarn type && yarn build && yarn test:pre && yarn cov && yarn test:post"
   },
   "dependencies": {
-    "@amaui/utils": "^1.0.11447",
+    "@onesy/utils": "^1.0.11447",
     "@babel/runtime": "^7.18.3"
   },
   "devDependencies": {
-    "@amaui/models": "^1.0.1",
-    "@amaui/test": "^1.0.1141",
+    "@onesy/models": "^1.0.1",
+    "@onesy/test": "^1.0.1141",
     "@babel/cli": "^7.16.0",
     "@babel/core": "^7.16.0",
     "@babel/plugin-transform-runtime": "^7.16.4",

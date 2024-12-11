@@ -1,6 +1,6 @@
-import is from '@amaui/utils/is';
-import copy from '@amaui/utils/copy';
-import { TObject } from '@amaui/models';
+import is from '@onesy/utils/is';
+import copy from '@onesy/utils/copy';
+import { TObject } from '@onesy/models';
 
 const unix = () => Math.floor(new Date().getTime() / 1000);
 
@@ -26,7 +26,7 @@ const optionsDefault: IOptions = {
   },
 };
 
-class AmauiMeta {
+class OnesyMeta {
   public static meta = new WeakMap();
   private static options_: IOptions = optionsDefault;
 
@@ -77,7 +77,7 @@ class AmauiMeta {
       const [value] = args;
 
       // Add key and value to object property which is a class's method
-      this.add(`amaui-meta-param:${parameterIndex}`, value, object, property);
+      this.add(`onesy-meta-param:${parameterIndex}`, value, object, property);
     };
   }
 
@@ -307,4 +307,4 @@ class AmauiMeta {
   }
 }
 
-export default AmauiMeta;
+export default OnesyMeta;

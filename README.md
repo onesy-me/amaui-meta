@@ -4,11 +4,11 @@
 
 <p align='center'>
   <a target='_blank' rel='noopener noreferrer' href='#'>
-    <img src='utils/images/logo.svg' alt='amaui logo' />
+    <img src='utils/images/logo.svg' alt='onesy logo' />
   </a>
 </p>
 
-<h1 align='center'>amaui Meta</h1>
+<h1 align='center'>onesy Meta</h1>
 
 <p align='center'>
   Meta
@@ -39,21 +39,21 @@
 ### Add
 
 ```sh
-yarn add @amaui/meta
+yarn add @onesy/meta
 ```
 
 ### Use
 
 ```javascript
-  import AmauiMeta from '@amaui/meta';
+  import OnesyMeta from '@onesy/meta';
 
   const object = {};
 
-  AmauiMeta.add('a', 'a', object);
-  AmauiMeta.add('a', 'a4', object, 'p');
+  OnesyMeta.add('a', 'a', object);
+  OnesyMeta.add('a', 'a4', object, 'p');
 
-  AmauiMeta.get('a', object);
-  AmauiMeta.get('a', object, 'p');
+  OnesyMeta.get('a', object);
+  OnesyMeta.get('a', object, 'p');
 
   // Output
   // 'a'
